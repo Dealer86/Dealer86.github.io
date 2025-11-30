@@ -18,9 +18,6 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <style>
         :root {
             --primary-color: #00ff88;
@@ -960,6 +957,22 @@
             opacity: 1 !important;
             transform: none !important;
         }
+
+        /* Simple fade-in animation */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -998,18 +1011,18 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <div class="hero-label" data-aos="fade-up">
+            <div class="hero-label">
                 <i class="fas fa-circle" style="font-size: 0.5rem; color: var(--primary-color); animation: pulse 2s infinite;"></i>
                 Available for Freelance
             </div>
-            <h1 data-aos="fade-up" data-aos-delay="100">Hi, I'm Adrian Croitor</h1>
+            <h1>Hi, I'm Adrian Croitor</h1>
             <div class="typing-text" id="typingText"></div>
-            <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+            <p class="hero-description">
                 Passionate developer specializing in building exceptional SaaS applications, 
                 AI automation workflows, and secure cloud infrastructure.
             </p>
             
-            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+            <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">
                     <i class="fas fa-rocket"></i>
                     View My Work
@@ -1021,7 +1034,7 @@
             </div>
             
             <!-- Social Links -->
-            <div class="social-links" data-aos="fade-up" data-aos-delay="500">
+            <div class="social-links">
                 <a href="https://discord.com/users/adicroitor#5450" class="social-link discord" target="_blank">
                     <i class="fab fa-discord"></i>
                     Discord
@@ -1044,7 +1057,7 @@
 
     <!-- About Section -->
     <section class="about" id="about">
-        <div class="section-header" data-aos="fade-up">
+        <div class="section-header">
             <div class="section-label">
                 <i class="fas fa-code"></i>
                 About Me
@@ -1055,7 +1068,7 @@
             </p>
         </div>
         
-        <div class="code-block" data-aos="fade-up" data-aos-delay="200">
+        <div class="code-block">
             <div class="code-dots">
                 <div class="code-dot red"></div>
                 <div class="code-dot yellow"></div>
@@ -1091,7 +1104,7 @@
 
     <!-- Tech Stack Section -->
     <section class="tech-stack" id="tech">
-        <div class="section-header" data-aos="fade-up">
+        <div class="section-header">
             <div class="section-label">
                 <i class="fas fa-tools"></i>
                 Tech Stack
@@ -1103,7 +1116,7 @@
         </div>
 
         <!-- Languages & Frameworks -->
-        <div class="tech-category" data-aos="fade-up">
+        <div class="tech-category">
             <h3 class="tech-category-title">
                 <i class="fas fa-code"></i>
                 Languages & Frameworks
@@ -1137,7 +1150,7 @@
         </div>
 
         <!-- Databases -->
-        <div class="tech-category" data-aos="fade-up">
+        <div class="tech-category">
             <h3 class="tech-category-title">
                 <i class="fas fa-database"></i>
                 Databases
@@ -1159,7 +1172,7 @@
         </div>
 
         <!-- Automation & AI -->
-        <div class="tech-category" data-aos="fade-up">
+        <div class="tech-category">
             <h3 class="tech-category-title">
                 <i class="fas fa-robot"></i>
                 Automation & AI
@@ -1185,7 +1198,7 @@
         </div>
 
         <!-- DevOps & Infrastructure -->
-        <div class="tech-category" data-aos="fade-up">
+        <div class="tech-category">
             <h3 class="tech-category-title">
                 <i class="fas fa-cloud"></i>
                 DevOps & Infrastructure
@@ -1219,7 +1232,7 @@
         </div>
 
         <!-- Tools & Platforms -->
-        <div class="tech-category" data-aos="fade-up">
+        <div class="tech-category">
             <h3 class="tech-category-title">
                 <i class="fas fa-screwdriver-wrench"></i>
                 Tools & Platforms
@@ -1243,7 +1256,7 @@
 
     <!-- Projects Section -->
     <section class="projects" id="projects">
-        <div class="section-header" data-aos="fade-up">
+        <div class="section-header">
             <div class="section-label">
                 <i class="fas fa-folder-open"></i>
                 Portfolio
@@ -1256,7 +1269,7 @@
         
         <div class="projects-grid">
             <!-- Arhivă de Facturi -->
-            <div class="project-card" data-aos="fade-up">
+            <div class="project-card">
                 <div class="project-image">
                     <img src="https://info.arhivadefacturi.ro/LogoColoratMare.png" alt="Arhivă de Facturi" class="project-logo">
                 </div>
@@ -1292,7 +1305,7 @@
             </div>
 
             <!-- eCantar -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card">
                 <div class="project-image">
                     <img src="https://www.ecantar.ro/ecantar_p.png" alt="eCantar" class="project-logo" style="max-height: 130px;">
                 </div>
@@ -1331,7 +1344,7 @@
 
     <!-- What I Do Section -->
     <section class="what-i-do" id="services">
-        <div class="section-header" data-aos="fade-up">
+        <div class="section-header">
             <div class="section-label">
                 <i class="fas fa-lightbulb"></i>
                 Services
@@ -1344,7 +1357,7 @@
         
         <div class="services-grid">
             <!-- Development -->
-            <div class="service-card" data-aos="fade-up">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-laptop-code"></i>
                 </div>
@@ -1354,12 +1367,12 @@
                     <li><i class="fas fa-angle-right"></i> Full-Stack Web Development</li>
                     <li><i class="fas fa-angle-right"></i> Payment Gateway Integration</li>
                     <li><i class="fas fa-angle-right"></i> RESTful API Development</li>
-                    <li><i class="fas fa-angle-right"></i> E-commerce Platforms</li>
+                    <li><i class="fas fa-angle-right"></i> SaaS Platforms</li>
                 </ul>
             </div>
 
             <!-- Automation -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-robot"></i>
                 </div>
@@ -1374,7 +1387,7 @@
             </div>
 
             <!-- Infrastructure -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-cloud"></i>
                 </div>
@@ -1390,7 +1403,7 @@
         </div>
 
         <!-- Specialized Skills -->
-        <div class="specialized-skills" data-aos="fade-up">
+        <div class="specialized-skills">
             <div class="section-label">
                 <i class="fas fa-award"></i>
                 Specialized Skills
@@ -1414,7 +1427,7 @@
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="section-header" data-aos="fade-up">
+        <div class="section-header">
             <div class="section-label">
                 <i class="fas fa-envelope"></i>
                 Get In Touch
@@ -1427,17 +1440,17 @@
         </div>
         
         <div class="contact-grid">
-            <a href="https://discord.com/users/adicroitor#5450" class="contact-card" data-aos="fade-up" data-aos-delay="100">
+            <a href="https://discord.com/users/adicroitor#5450" class="contact-card">
                 <i class="fab fa-discord"></i>
                 <strong>Discord</strong>
                 <span>Let's Chat</span>
             </a>
-            <a href="https://www.linkedin.com/in/adrian-croitor-/" class="contact-card" data-aos="fade-up" data-aos-delay="200">
+            <a href="https://www.linkedin.com/in/adrian-croitor-/" class="contact-card">
                 <i class="fab fa-linkedin"></i>
                 <strong>LinkedIn</strong>
                 <span>Connect</span>
             </a>
-            <a href="/cdn-cgi/l/email-protection#33505c5d47525047735257415a525d50415c5a475c411d505c5e" class="contact-card" data-aos="fade-up" data-aos-delay="300">
+            <a href="/cdn-cgi/l/email-protection#33505c5d47525047735257415a525d50415c5a475c411d505c5e" class="contact-card">
                 <i class="fas fa-envelope"></i>
                 <strong>Email</strong>
                 <span>Send Message</span>
@@ -1448,48 +1461,44 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p class="quote" data-aos="fade-up">
+            <p class="quote">
                 "Code is like humor. When you have to explain it, it's bad."
                 <br><span style="color: var(--primary-color);">– Cory House</span>
             </p>
-            <p data-aos="fade-up" data-aos-delay="100" style="margin-top: 2rem;">
+            <p style="margin-top: 2rem;">
                 <strong>Made with <i class="fas fa-heart" style="color: var(--primary-color);"></i> by Adrian Croitor</strong><br>
                 <em style="color: var(--text-muted);">Full Stack Developer | AI Enthusiast | Automation Expert</em><br>
                 <span style="color: var(--primary-color); font-size: 1.2rem; margin-top: 0.5rem; display: inline-block;">🇷🇴 Proudly developing from Romania</span>
             </p>
-            <p style="margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem;" data-aos="fade-up" data-aos-delay="200">
+            <p style="margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem;">
                 © 2024 Adrian Croitor. All rights reserved.
             </p>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
     <script>
-        // Wait for everything to load
-        window.addEventListener('load', function() {
-            // Initialize AOS if available
-            if (typeof AOS !== 'undefined') {
-                AOS.init({
-                    duration: 1000,
-                    once: true,
-                    offset: 100,
-                    disable: false
-                });
+        // Hide loader when DOM is ready (don't wait for all resources)
+        document.addEventListener('DOMContentLoaded', function() {
+            const loader = document.getElementById('loader');
+            if (loader) {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 300);
             }
-            
-            // Hide loader
-            setTimeout(() => {
-                const loader = document.getElementById('loader');
-                if (loader) {
-                    loader.style.opacity = '0';
-                    setTimeout(() => {
-                        loader.style.display = 'none';
-                    }, 500);
-                }
-            }, 1000);
         });
+
+        // Fallback: Force hide loader after 3 seconds regardless
+        setTimeout(function() {
+            const loader = document.getElementById('loader');
+            if (loader && loader.style.display !== 'none') {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 300);
+            }
+        }, 3000);
 
         // Typing Effect
         const texts = [
@@ -1575,4 +1584,12 @@
         // Pulse animation for available status
         const style = document.createElement('style');
         style.textContent = `
-   
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.5; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
