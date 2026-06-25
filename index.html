@@ -465,7 +465,7 @@
                     <i class="fab fa-instagram"></i>
                     Instagram
                 </a>
-                <a href="/cdn-cgi/l/email-protection#b6d5d9d8c2d7d5c2f6d7d2c4dfd7d8d5c4d9dfc2d9c498d5d9db" class="social-link email">
+                <a href="#" class="social-link email js-email" aria-label="Email">
                     <i class="fas fa-envelope"></i>
                     Email
                 </a>
@@ -843,7 +843,7 @@
                 <strong>LinkedIn</strong>
                 <span>Connect</span>
             </a>
-            <a href="/cdn-cgi/l/email-protection#33505c5d47525047735257415a525d50415c5a475c411d505c5e" class="contact-card glass accent-teal">
+            <a href="#" class="contact-card glass accent-teal js-email" aria-label="Email">
                 <i class="fas fa-envelope"></i>
                 <strong>Email</strong>
                 <span>Send Message</span>
@@ -943,6 +943,14 @@
             entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
         }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // Build email links at runtime (kept out of HTML source to reduce spam scraping)
+        (function () {
+            var user = 'adriancroitor.tech', domain = 'gmail.com';
+            document.querySelectorAll('.js-email').forEach(function (a) {
+                a.setAttribute('href', 'mailto:' + user + '@' + domain);
+            });
+        })();
     </script>
 </body>
 </html>
