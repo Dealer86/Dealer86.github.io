@@ -386,6 +386,20 @@
             .orb, .grid, .hero h1, .project-card::before { animation: none !important; }
             html.js .reveal { opacity: 1; transform: none; }
         }
+
+        /* ===== Mobile performance: cut heavy compositing (prevents GPU crash on fast scroll) ===== */
+        @media (max-width: 900px) {
+            /* backdrop-filter blur is the #1 cause of compositor memory spikes on mobile */
+            *, *::before, *::after { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+            header { background: rgba(6,7,13,0.94); }
+            /* freeze the aurora: composited once instead of every frame, lighter blur */
+            .orb { animation: none !important; filter: blur(56px) !important; opacity: 0.7; }
+            .grid { animation: none !important; }
+            /* stop the infinitely-rotating conic borders */
+            .project-card::before { animation: none !important; opacity: 0.45; }
+            /* static gradient name (no continuous text repaint) */
+            .hero h1 { animation: none !important; background-position: 0 0; }
+        }
     </style>
 </head>
 <body>
@@ -911,13 +925,25 @@
         }
         document.addEventListener('DOMContentLoaded', type);
 
-        // Scroll Progress Bar
-        window.addEventListener('scroll', () => {
-            const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (window.scrollY / h) * 100;
-            const bar = document.getElementById('progressBar');
-            if (bar) bar.style.width = scrolled + '%';
-        });
+        // Throttled scroll: progress bar + hero parallax in one rAF pass (passive, mobile-safe)
+        const progressBar = document.getElementById('progressBar');
+        const heroContent = document.querySelector('.hero-content');
+        let scrollTicking = false;
+        function onScrollFrame() {
+            const y = window.scrollY || window.pageYOffset;
+            if (progressBar) {
+                const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                progressBar.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+            }
+            if (heroContent && y < 800) {
+                heroContent.style.transform = 'translateY(' + (y * 0.3) + 'px)';
+                heroContent.style.opacity = 1 - (y / 800);
+            }
+            scrollTicking = false;
+        }
+        window.addEventListener('scroll', function () {
+            if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+        }, { passive: true });
 
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -926,16 +952,6 @@
                 const t = document.querySelector(this.getAttribute('href'));
                 if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
-        });
-
-        // Parallax hero
-        window.addEventListener('scroll', () => {
-            const s = window.pageYOffset;
-            const hero = document.querySelector('.hero-content');
-            if (hero && s < 800) {
-                hero.style.transform = `translateY(${s * 0.3}px)`;
-                hero.style.opacity = 1 - (s / 800);
-            }
         });
 
         // Reveal sections on scroll
