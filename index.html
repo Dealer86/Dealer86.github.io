@@ -341,6 +341,10 @@
         .skill-badge.anaf:hover { box-shadow: 0 12px 26px rgba(56,225,214,0.26); }
         .skill-badge.ai { color: var(--purple); background: rgba(155,123,255,0.1); border: 1px solid rgba(155,123,255,0.24); }
         .skill-badge.ai:hover { box-shadow: 0 12px 26px rgba(155,123,255,0.28); }
+        .skill-badge.sec { color: var(--teal); background: rgba(56,225,214,0.1); border: 1px solid rgba(56,225,214,0.24); }
+        .skill-badge.sec:hover { box-shadow: 0 12px 26px rgba(56,225,214,0.26); }
+        .skill-badge.vector { color: var(--pink); background: rgba(255,111,174,0.1); border: 1px solid rgba(255,111,174,0.24); }
+        .skill-badge.vector:hover { box-shadow: 0 12px 26px rgba(255,111,174,0.28); }
 
         /* ============ Contact ============ */
         .contact { text-align: center; max-width: 900px; }
@@ -519,7 +523,7 @@
             </div>
             <h2 class="section-title">Building Digital Solutions</h2>
             <p class="section-description">
-                Full Stack Developer with expertise in modern web technologies and AI automation
+                Full Stack Developer building production-ready SaaS with AI-augmented, agentic workflows and a security-first mindset
             </p>
         </div>
 
@@ -540,19 +544,20 @@
 
     <span class="code-keyword">def</span> <span class="code-function">current_focus</span>(self):
         <span class="code-keyword">return</span> {
-            <span class="code-string">"building"</span>: <span class="code-string">"SaaS applications with Django & n8n"</span>,
-            <span class="code-string">"exploring"</span>: <span class="code-string">"AI automation with Ollama & Claude MCP"</span>,
-            <span class="code-string">"deploying"</span>: <span class="code-string">"Secure infrastructure with Cloudflare"</span>,
-            <span class="code-string">"learning"</span>: <span class="code-string">"Advanced workflow automation & LLM integration"</span>
+            <span class="code-string">"building"</span>: <span class="code-string">"agentic AI tooling with Claude/MCP, n8n & Ollama"</span>,
+            <span class="code-string">"exploring"</span>: <span class="code-string">"RAG & vector search with pgvector and Qdrant"</span>,
+            <span class="code-string">"deploying"</span>: <span class="code-string">"self-hosted infra, secure by default (OWASP)"</span>,
+            <span class="code-string">"learning"</span>: <span class="code-string">"context engineering & advanced agentic workflows"</span>
         }
 
     <span class="code-keyword">def</span> <span class="code-function">tech_stack</span>(self):
         <span class="code-keyword">return</span> {
             <span class="code-string">"backend"</span>: [<span class="code-string">"Python"</span>, <span class="code-string">"Django"</span>, <span class="code-string">"PHP"</span>],
             <span class="code-string">"frontend"</span>: [<span class="code-string">"JavaScript"</span>, <span class="code-string">"HTML5"</span>, <span class="code-string">"CSS3"</span>],
-            <span class="code-string">"database"</span>: [<span class="code-string">"PostgreSQL"</span>, <span class="code-string">"MySQL"</span>, <span class="code-string">"SQLite"</span>],
-            <span class="code-string">"automation"</span>: [<span class="code-string">"n8n"</span>, <span class="code-string">"Claude MCP"</span>],
-            <span class="code-string">"devops"</span>: [<span class="code-string">"Docker"</span>, <span class="code-string">"Cloudflare"</span>, <span class="code-string">"Git"</span>]
+            <span class="code-string">"database"</span>: [<span class="code-string">"PostgreSQL"</span>, <span class="code-string">"MySQL"</span>, <span class="code-string">"pgvector"</span>, <span class="code-string">"Qdrant"</span>],
+            <span class="code-string">"automation"</span>: [<span class="code-string">"n8n"</span>, <span class="code-string">"Claude MCP"</span>, <span class="code-string">"RAG"</span>, <span class="code-string">"Agentic Workflows"</span>],
+            <span class="code-string">"security"</span>: [<span class="code-string">"OWASP"</span>, <span class="code-string">"AppSec"</span>],
+            <span class="code-string">"devops"</span>: [<span class="code-string">"Docker"</span>, <span class="code-string">"Cloudflare"</span>, <span class="code-string">"Self-hosted Server"</span>]
         }</code></pre>
             </div>
         </div>
@@ -593,7 +598,7 @@
                 </div>
                 <div class="tech-item">
                     <img src="https://skillicons.dev/icons?i=html" alt="HTML5" width="65" height="65" loading="lazy" onerror="this.style.display='none'">
-                    <strong>HTML5</strong>
+                    <strong>HTML5 & CSS3</strong>
                 </div>
                 <div class="tech-item">
                     <img src="https://skillicons.dev/icons?i=bootstrap" alt="Bootstrap" width="65" height="65" loading="lazy" onerror="this.style.display='none'">
@@ -617,6 +622,10 @@
                 <div class="tech-item">
                     <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="SQLite" width="65" height="65" loading="lazy" onerror="this.style.display='none'">
                     <strong>SQLite</strong>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.simpleicons.org/qdrant" alt="Qdrant" width="65" height="65" loading="lazy" onerror="this.style.display='none'">
+                    <strong>Qdrant</strong>
                 </div>
             </div>
         </div>
@@ -666,7 +675,7 @@
                 </div>
                 <div class="tech-item">
                     <img src="https://skillicons.dev/icons?i=linux" alt="Linux" width="65" height="65" loading="lazy" onerror="this.style.display='none'">
-                    <strong>Linux</strong>
+                    <strong>Linux Admin</strong>
                 </div>
                 <div class="tech-item">
                     <img src="https://skillicons.dev/icons?i=nginx" alt="Nginx" width="65" height="65" loading="lazy" onerror="this.style.display='none'">
@@ -812,10 +821,10 @@
                 <h3>Automation</h3>
                 <ul class="service-list">
                     <li><i class="fas fa-angle-right"></i> n8n Workflow Automation</li>
-                    <li><i class="fas fa-angle-right"></i> AI-Powered Processing</li>
+                    <li><i class="fas fa-angle-right"></i> RAG & Vector Search (pgvector, Qdrant)</li>
                     <li><i class="fas fa-angle-right"></i> Email & Document Automation</li>
-                    <li><i class="fas fa-angle-right"></i> Claude MCP Integration</li>
-                    <li><i class="fas fa-angle-right"></i> LLM-Based Solutions</li>
+                    <li><i class="fas fa-angle-right"></i> Claude MCP & Agentic Workflows</li>
+                    <li><i class="fas fa-angle-right"></i> Context Engineering & LLM Solutions</li>
                 </ul>
             </div>
 
@@ -851,6 +860,14 @@
                 <div class="skill-badge ai">
                     <i class="fas fa-brain"></i>
                     AI Automation — LLM | RAG
+                </div>
+                <div class="skill-badge sec">
+                    <i class="fas fa-shield-halved"></i>
+                    Application Security — OWASP
+                </div>
+                <div class="skill-badge vector">
+                    <i class="fas fa-magnifying-glass"></i>
+                    Vector Search — pgvector | Qdrant
                 </div>
             </div>
         </div>
@@ -928,10 +945,10 @@
 
         // Typing Effect (unchanged logic)
         const texts = [
-            'Full Stack Developer & AI Enthusiast',
-            'Building SaaS Solutions with Django',
-            'Automation Expert with n8n',
-            'Creating Secure Cloud Infrastructure'
+            'Full Stack Developer & AI-Augmented Engineer',
+            'Building agentic tooling with Claude & MCP',
+            'RAG & vector search with pgvector and Qdrant',
+            'Security-first development (OWASP)'
         ];
         let textIndex = 0, charIndex = 0, isDeleting = false;
         const typingSpeed = 100, deletingSpeed = 50, pauseTime = 2000;
